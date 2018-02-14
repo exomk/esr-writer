@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  ~
+  ~ Copyright (C) 2018  EXO Service Solutions
+  ~
+  ~ This program is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software Foundation,
+  ~ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+  ~
+  ~ You can contact us at contact4exo@exo.mk
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.exo.registrator.card"
+    android:versionCode="1"
+    android:versionName="0.0.1">
+
+    <!-- Card emulation was introduced in API 19. -->
+    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <receiver
+            android:name=".BootReceiver"
+            android:label="StartMyServiceAtBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".SetupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!--<category android:name="android.intent.category.LEANBACK_LAUNCHER"/>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".RegistratorCardActivity"
+            android:theme="@style/Theme.Transparent" />
+
+        <service
+            android:name=".RegistratorCardService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+
+            <!-- Intent filter indicating that card emulation is supported. -->
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!--
+            Required XML configuration file, listing the AIDs that are emulated for.
+            This defines what protocols card emulation service supports.
+            -->
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/aid_list" />
+        </service>
+
+    </application>
+
+</manifest>

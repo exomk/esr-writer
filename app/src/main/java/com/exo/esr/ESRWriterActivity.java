@@ -20,7 +20,7 @@
  * You can contact us at contact4exo@exo.mk
  */
 
-package com.exo.registrator.card;
+package com.exo.esr;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -30,7 +30,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 
 
-public class RegistratorCardActivity extends Activity {
+public class ESRWriterActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class RegistratorCardActivity extends Activity {
         TextView cardHolderTextView;
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrator_card);
+        setContentView(R.layout.activity_esr_writer);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         cardId = sharedPreferences.getString(SetupActivity.CARD_ID, "");

@@ -20,7 +20,7 @@
  * You can contact us at contact4exo@exo.mk
  */
 
-package com.exo.registrator.card;
+package com.exo.esr;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -28,8 +28,6 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-
-import com.exo.registrator.card.R;
 
 public class SetupActivity extends AppCompatActivity {
 

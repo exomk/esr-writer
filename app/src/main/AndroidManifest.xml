@@ -22,7 +22,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.exo.registrator.card"
+    package="com.exo.esr"
     android:versionCode="1"
     android:versionName="0.0.1">
 
@@ -44,14 +44,14 @@
         android:theme="@style/AppTheme">
 
         <receiver
-            android:name=".BootReceiver"
+            android:name="com.exo.esr.BootReceiver"
             android:label="StartMyServiceAtBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".SetupActivity">
+        <activity android:name="com.exo.esr.SetupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <!--<category android:name="android.intent.category.LEANBACK_LAUNCHER"/>-->
@@ -60,11 +60,11 @@
         </activity>
 
         <activity
-            android:name=".RegistratorCardActivity"
+            android:name="com.exo.esr.ESRWriterActivity"
             android:theme="@style/Theme.Transparent" />
 
         <service
-            android:name=".RegistratorCardService"
+            android:name="com.exo.esr.ESRWriterService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_NFC_SERVICE">

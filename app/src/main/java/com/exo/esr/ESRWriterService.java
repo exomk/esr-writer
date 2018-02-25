@@ -20,7 +20,7 @@
  * You can contact us at contact4exo@exo.mk
  */
 
-package com.exo.registrator.card;
+package com.exo.esr;
 
 import android.content.Context;
 import android.content.Intent;
@@ -34,7 +34,7 @@ import android.util.Log;
 
 import java.util.Arrays;
 
-public class RegistratorCardService extends HostApduService {
+public class ESRWriterService extends HostApduService {
 
     private static final String TAG = "CardService";
 
@@ -57,7 +57,7 @@ public class RegistratorCardService extends HostApduService {
 
     private Context context;
 
-    public RegistratorCardService() {
+    public ESRWriterService() {
         this.context = this;
     }
 
@@ -196,7 +196,7 @@ public class RegistratorCardService extends HostApduService {
             sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
             cardId = sharedPreferences.getString(SetupActivity.CARD_ID, "");
 
-            Log.i(TAG, "Sending registration card id: " + cardId);
+            Log.i(TAG, "Sending ESR id: " + cardId);
 
             return ConcatArrays(HexStringToByteArray(cardId), SELECT_OK_SW);
         } else {
@@ -207,7 +207,7 @@ public class RegistratorCardService extends HostApduService {
                         Intent intent;
                         final ToneGenerator toneGenerator = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);
 
-                        intent = new Intent(context, RegistratorCardActivity.class);
+                        intent = new Intent(context, ESRWriterActivity.class);
                         startActivity(intent);
                         toneGenerator.startTone(ToneGenerator.TONE_PROP_BEEP);
                     }

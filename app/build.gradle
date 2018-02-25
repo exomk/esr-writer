@@ -26,7 +26,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "com.exo.registrator.card"
+        applicationId "com.exo.esr"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1

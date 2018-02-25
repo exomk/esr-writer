@@ -20,7 +20,7 @@
  * You can contact us at contact4exo@exo.mk
  */
 
-package com.exo.registrator.card;
+package com.exo.esr;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -36,7 +36,7 @@ public class BootReceiver extends BroadcastReceiver {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             Intent serviceIntent;
 
-            serviceIntent = new Intent(context, RegistratorCardService.class);
+            serviceIntent = new Intent(context, ESRWriterService.class);
             context.startService(serviceIntent);
         }
     }

@@ -21,9 +21,9 @@
   -->
 
 <resources>
-    <string name="app_name">ESR Writer</string>
-    <string name="service_name">ESR Writer Service</string>
-    <string name="card_title">ESR Writer</string>
+    <string name="app_name">EXO Smart Registrator</string>
+    <string name="service_name">ESR APDU Service</string>
+    <string name="card_title">EXO Smart Registrator</string>
     <string name="btn_esr_register">Register</string>
     <string name="card_holder">Card holder</string>
     <string name="card_id">Card ID</string>

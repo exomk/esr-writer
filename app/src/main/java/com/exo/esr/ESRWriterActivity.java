@@ -47,8 +47,8 @@ public class ESRWriterActivity extends Activity {
         cardId = sharedPreferences.getString(SetupActivity.CARD_ID, "");
         cardHolder = sharedPreferences.getString(SetupActivity.CARD_HOLDER, "");
 
-        carIdTextView = findViewById(R.id.cardIdTextView);
-        cardHolderTextView = findViewById(R.id.cardHolderTextView);
+        carIdTextView = (TextView) findViewById(R.id.cardIdTextView);
+        cardHolderTextView = (TextView) findViewById(R.id.cardHolderTextView);
         carIdTextView.setText(cardId);
         cardHolderTextView.setText(cardHolder);
     }

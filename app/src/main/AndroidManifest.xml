@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
   ~
   ~ Copyright (C) 2018  EXO Service Solutions
@@ -19,8 +18,7 @@
   ~ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
   ~
   ~ You can contact us at contact4exo@exo.mk
-  -->
-
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.exo.esr"
     android:versionCode="1"
@@ -42,29 +40,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <receiver
-            android:name="com.exo.esr.BootReceiver"
+            android:name=".BootReceiver"
             android:label="StartMyServiceAtBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.exo.esr.SetupActivity">
+        <activity android:name=".ESRSetupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!--<category android:name="android.intent.category.LEANBACK_LAUNCHER"/>-->
+                <!-- <category android:name="android.intent.category.LEANBACK_LAUNCHER"/> -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.exo.esr.ESRWriterActivity"
+            android:name=".ESRCardActivity"
             android:theme="@style/Theme.Transparent" />
 
         <service
-            android:name="com.exo.esr.ESRWriterService"
+            android:name=".ESRWriterService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_NFC_SERVICE">
@@ -85,6 +81,7 @@
                 android:resource="@xml/aid_list" />
         </service>
 
+        <activity android:name=".ESRRegisterActivity"></activity>
     </application>
 
 </manifest>

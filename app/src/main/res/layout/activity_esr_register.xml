@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.exo.esr.RegisterActivity">
+    android:orientation="vertical"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context="com.exo.esr.ESRRegisterActivity"
+    tools:layout_editor_absoluteX="8dp">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/border_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ToggleButton
+            android:id="@+id/btn_register_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:width="250dp"
+            android:background="@color/colorRed"
+            android:drawableLeft="@drawable/img_register_in"
+            android:textColor="@color/colorWhite"
+            android:textOff="@string/register_in"
+            android:textOn="@string/register_in" />
+
+        <ToggleButton
+            android:id="@+id/btn_register_break"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:width="250dp"
+            android:background="@color/colorRed"
+            android:drawableLeft="@drawable/img_break"
+            android:textColor="@color/colorWhite"
+            android:textOff="@string/register_break"
+            android:textOn="@string/register_break" />
+
+        <ToggleButton
+            android:id="@+id/btn_register_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:width="250dp"
+            android:background="@color/colorRed"
+            android:drawableLeft="@drawable/img_register_out"
+            android:textColor="@color/colorWhite"
+            android:textOff="@string/register_out"
+            android:textOn="@string/register_out" />
+    </LinearLayout>
+
+
+</LinearLayout>

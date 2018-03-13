@@ -22,6 +22,7 @@
 
 package com.exo.esr;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -29,7 +30,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
-public class SetupActivity extends AppCompatActivity {
+public class ESRSetupActivity extends AppCompatActivity {
 
     public static String CARD_HOLDER = "user";
     public static String CARD_ID = "card_id";
@@ -45,10 +46,11 @@ public class SetupActivity extends AppCompatActivity {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         if (sharedPreferences.getString(CARD_HOLDER, null) == null) {
-            setContentView(R.layout.activity_setup);
+            setContentView(R.layout.activity_esr_setup);
         } else {
-            setContentView(R.layout.activity_setup);
-//            finish();
+            Intent intent = new Intent(this, ESRRegisterActivity.class);
+            startActivity(intent);
+            finish();
         }
 
     }

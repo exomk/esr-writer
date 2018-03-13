@@ -57,6 +57,8 @@ public class ESRWriterService extends HostApduService {
 
     private Context context;
 
+    private static ERegisterType selectedRegisterType = ERegisterType.REGISTER_IN;
+
     public ESRWriterService() {
         this.context = this;
     }
@@ -148,6 +150,10 @@ public class ESRWriterService extends HostApduService {
         return HexStringToByteArray(APDU_HEADER + String.format("%02X", aid.length() / 2) + aid);
     }
 
+    public static void setRegisterType(ERegisterType registerType) {
+        selectedRegisterType = registerType;
+    }
+
     @Override
     public void onCreate() {
     }
@@ -191,14 +197,15 @@ public class ESRWriterService extends HostApduService {
         /* If the APDU matches the SELECT AID command for this service, send the card id, followed by a SELECT_OK status trailer (0x9000). */
         if (Arrays.equals(SELECT_APDU, commandApdu)) {
             String cardId;
+            String checkType = selectedRegisterType.registerType();
             SharedPreferences sharedPreferences;
 
             sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-            cardId = sharedPreferences.getString(SetupActivity.CARD_ID, "");
+            cardId = sharedPreferences.getString(ESRSetupActivity.CARD_ID, "");
 
             Log.i(TAG, "Sending ESR id: " + cardId);
 
-            return ConcatArrays(HexStringToByteArray(cardId), SELECT_OK_SW);
+            return ConcatArrays(HexStringToByteArray(cardId), HexStringToByteArray(checkType), SELECT_OK_SW);
         } else {
             if (Arrays.equals(STATUS_OK_APDU, commandApdu)) {
 
@@ -207,7 +214,11 @@ public class ESRWriterService extends HostApduService {
                         Intent intent;
                         final ToneGenerator toneGenerator = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);
 
-                        intent = new Intent(context, ESRWriterActivity.class);
+                        // Stop current activity
+                        sendBroadcast(new Intent("registration_success"));
+
+                        intent = new Intent(context, ESRCardActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         toneGenerator.startTone(ToneGenerator.TONE_PROP_BEEP);
                     }

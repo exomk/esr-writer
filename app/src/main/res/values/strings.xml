@@ -27,4 +27,7 @@
     <string name="btn_esr_register">Register</string>
     <string name="card_holder">Card holder</string>
     <string name="card_id">Card ID</string>
+    <string name="register_in">REGISTER IN</string>
+    <string name="register_out">REGISTER OUT</string>
+    <string name="register_break">BREAK</string>
 </resources>

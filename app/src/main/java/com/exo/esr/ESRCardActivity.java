@@ -30,7 +30,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 
 
-public class ESRWriterActivity extends Activity {
+public class ESRCardActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class ESRWriterActivity extends Activity {
         TextView cardHolderTextView;
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_esr_writer);
+        setContentView(R.layout.activity_esr_card);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         cardId = sharedPreferences.getString(ESRSetupActivity.CARD_ID, "");

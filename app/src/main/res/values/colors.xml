@@ -28,4 +28,5 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorRed">#ED2029</color>
+    <color name="colorDarkRed">#A0040D</color>
 </resources>

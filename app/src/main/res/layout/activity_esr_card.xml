@@ -31,21 +31,23 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/esr_writer_card"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@android:color/transparent"/>
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/esr_writer_card" />
 
     <TextView
         android:id="@+id/cardHolderTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/imageView"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="162dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/colorWhite"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
@@ -54,9 +56,9 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/cardHolderTextView"
         android:layout_below="@+id/cardHolderTextView"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="2dp"
         android:textColor="@color/colorWhite"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

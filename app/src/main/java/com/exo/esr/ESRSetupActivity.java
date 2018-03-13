@@ -22,41 +22,48 @@
 
 package com.exo.esr;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 
+public class SetupActivity extends AppCompatActivity {
 
-public class ESRWriterActivity extends Activity {
+    public static String CARD_HOLDER = "user";
+    public static String CARD_ID = "card_id";
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private EditText editCardHolder;
+    private EditText editCardId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String cardId;
-        String cardHolder;
-        SharedPreferences sharedPreferences;
-        TextView carIdTextView;
-        TextView cardHolderTextView;
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_esr_writer);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        cardId = sharedPreferences.getString(SetupActivity.CARD_ID, "");
-        cardHolder = sharedPreferences.getString(SetupActivity.CARD_HOLDER, "");
+        if (sharedPreferences.getString(CARD_HOLDER, null) == null) {
+            setContentView(R.layout.activity_setup);
+        } else {
+            setContentView(R.layout.activity_setup);
+//            finish();
+        }
 
-        carIdTextView = (TextView) findViewById(R.id.cardIdTextView);
-        cardHolderTextView = (TextView) findViewById(R.id.cardHolderTextView);
-        carIdTextView.setText(cardId);
-        cardHolderTextView.setText(cardHolder);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        this.finish();
+    protected void setUp(View button) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = sharedPreferences.edit();
 
-        return super.onTouchEvent(event);
+        editCardHolder = (EditText) findViewById(R.id.editUser);
+        editCardId = (EditText) findViewById(R.id.editCardId);
+
+        editor.putString(CARD_HOLDER, editCardHolder.getText().toString());
+        editor.putString(CARD_ID, editCardId.getText().toString());
+        editor.commit();
+
+        this.finish();
     }
 }

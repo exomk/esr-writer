@@ -22,7 +22,6 @@
 
 package com.exo.esr;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -43,16 +42,7 @@ public class ESRSetupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        if (sharedPreferences.getString(CARD_HOLDER, null) == null) {
-            setContentView(R.layout.activity_esr_setup);
-        } else {
-            Intent intent = new Intent(this, ESRRegisterActivity.class);
-            startActivity(intent);
-            finish();
-        }
-
+        setContentView(R.layout.activity_esr_setup);
     }
 
     protected void setUp(View button) {

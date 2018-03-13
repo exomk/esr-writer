@@ -48,13 +48,15 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ESRSetupActivity">
+        <activity
+            android:name=".ESRSplashActivity"
+            android:theme="@style/ESRSplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!-- <category android:name="android.intent.category.LEANBACK_LAUNCHER"/> -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ESRCardActivity"
             android:theme="@style/Theme.Transparent" />
@@ -81,7 +83,8 @@
                 android:resource="@xml/aid_list" />
         </service>
 
-        <activity android:name=".ESRRegisterActivity"></activity>
+        <activity android:name=".ESRRegisterActivity" />
+        <activity android:name=".ESRSetupActivity"></activity>
     </application>
 
 </manifest>

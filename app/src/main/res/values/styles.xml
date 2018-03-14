@@ -40,7 +40,7 @@
     </style>
 
     <style name="ESRSplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
 
 

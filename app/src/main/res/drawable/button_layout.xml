@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetBottom="-12dp"
+    android:insetLeft="-12dp"
+    android:insetTop="-12dp"
+    android:drawable="@drawable/img_register_in">
+
+    <shape android:shape="rectangle">
+        <stroke
+            android:width="6dp"
+            android:color="@color/colorDarkRed"/>
+        <solid android:color="@color/colorRed" />
+    </shape>
+</inset>

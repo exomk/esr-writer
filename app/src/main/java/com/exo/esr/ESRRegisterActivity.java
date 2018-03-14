@@ -33,6 +33,9 @@ public class ESRRegisterActivity extends AppCompatActivity implements View.OnCli
 
         btnRegisterIn = (ToggleButton) findViewById(R.id.btn_register_in);
         btnRegisterIn.setOnClickListener(this);
+        ESRWriterService.setRegisterType(ERegisterType.REGISTER_IN);
+        btnRegisterIn.setChecked(true);
+        btnRegisterIn.setBackgroundColor(getResources().getColor(R.color.colorDarkRed));
 
         btnRegisterBreak = (ToggleButton) findViewById(R.id.btn_register_break);
         btnRegisterBreak.setOnClickListener(this);

@@ -22,12 +22,11 @@
   ~ You can contact us at contact4exo@exo.mk
   -->
 
-<resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="colorBlack">#000000</color>
-    <color name="colorRed">#ED2029</color>
-    <color name="colorDarkRed">#BE070F</color>
-</resources>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/colorWhite" />
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/img_splash" />
+    </item>
+</layer-list>

@@ -30,4 +30,5 @@
     <string name="register_in">REGISTER IN</string>
     <string name="register_out">REGISTER OUT</string>
     <string name="register_break">BREAK</string>
+    <string name="powered_by">Powered by</string>
 </resources>

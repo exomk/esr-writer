@@ -22,6 +22,7 @@
 
 package com.exo.esr;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -45,7 +46,9 @@ public class ESRSetupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_esr_setup);
     }
 
-    protected void setUp(View button) {
+    public void setUp(View view) {
+        Intent intent;
+
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         editor = sharedPreferences.edit();
 
@@ -56,6 +59,13 @@ public class ESRSetupActivity extends AppCompatActivity {
         editor.putString(CARD_ID, editCardId.getText().toString());
         editor.commit();
 
+        // start register activity
+        intent = new Intent(this, ESRRegisterActivity.class);
+        startActivity(intent);
+
+        finish();
+
         this.finish();
     }
+
 }

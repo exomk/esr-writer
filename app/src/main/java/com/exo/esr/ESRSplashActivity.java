@@ -44,6 +44,7 @@ public class ESRSplashActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_esr_splash);
         esrSplashActivity = this;
 
         new Handler().postDelayed(new Runnable() {

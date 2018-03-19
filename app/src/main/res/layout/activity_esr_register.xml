@@ -45,14 +45,15 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/btn_register_in_img"
                 android:layout_width="48dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_layout"
-                android:drawableLeft="@drawable/img_register_in"
+                android:layout_height="48dp"
+                android:background="@drawable/img_layout"
+                android:src="@drawable/img_register_in"
                 android:enabled="false"
-                android:paddingLeft="4dp"
+                android:paddingStart="2dp"
+                android:paddingEnd="6dp"
                 android:stateListAnimator="@null"/>
 
             <ToggleButton
@@ -75,14 +76,15 @@
             android:layout_marginTop="25dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/btn_register_break_img"
                 android:layout_width="48dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_layout"
-                android:drawableLeft="@drawable/img_break"
+                android:layout_height="48dp"
+                android:background="@drawable/img_layout"
+                android:src="@drawable/img_break"
                 android:enabled="false"
-                android:paddingLeft="4dp"
+                android:paddingStart="2dp"
+                android:paddingEnd="6dp"
                 android:stateListAnimator="@null"/>
 
             <ToggleButton
@@ -104,14 +106,15 @@
             android:layout_marginTop="25dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/btn_register_out_img"
                 android:layout_width="48dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_layout"
-                android:drawableLeft="@drawable/img_register_out"
+                android:layout_height="48dp"
+                android:background="@drawable/img_layout"
+                android:src="@drawable/img_register_out"
                 android:enabled="false"
-                android:paddingLeft="4dp"
+                android:paddingStart="2dp"
+                android:paddingEnd="6dp"
                 android:stateListAnimator="@null"/>
 
             <ToggleButton
